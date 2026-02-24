@@ -5,7 +5,7 @@ Personal development environment: shell, editor, terminal, window management, an
 ## Quick Start
 
 ```bash
-git clone git@github.com:0xOsiris/dotfiles.git ~/dotfiles
+git clone git@github.com:0xOsiris/dots.git ~/dotfiles
 cd ~/dotfiles
 
 # Full bootstrap (install deps + symlink everything)
