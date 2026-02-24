@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "plugins": {
+    "rust-analyzer-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "$HOME/.claude/plugins/cache/claude-plugins-official/rust-analyzer-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2025-12-20T00:28:52.894Z",
+        "lastUpdated": "2025-12-20T00:28:52.894Z",
+        "isLocal": true
+      }
+    ],
+    "lua-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "$HOME/.claude/plugins/cache/claude-plugins-official/lua-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-01-04T08:02:47.001Z",
+        "lastUpdated": "2026-01-04T08:02:47.001Z",
+        "isLocal": true
+      }
+    ]
+  }
+}

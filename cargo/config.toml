@@ -1,0 +1,44 @@
+# Cargo configuration
+# Symlink to ~/.cargo/config.toml
+
+# =============================================================================
+# Linker Configuration (mold for faster linking)
+# =============================================================================
+
+[target.x86_64-unknown-linux-gnu]
+linker = "clang"
+rustflags = ["-C", "link-arg=-fuse-ld=mold"]
+
+[target.aarch64-unknown-linux-gnu]
+linker = "clang"
+rustflags = ["-C", "link-arg=-fuse-ld=mold"]
+
+# macOS (uncomment if using sold)
+# [target.aarch64-apple-darwin]
+# rustflags = ["-C", "link-arg=-fuse-ld=/opt/homebrew/bin/ld64.mold"]
+
+# [target.x86_64-apple-darwin]
+# rustflags = ["-C", "link-arg=-fuse-ld=/opt/homebrew/bin/ld64.mold"]
+
+# =============================================================================
+# Build Settings
+# =============================================================================
+
+[build]
+# Use all available cores
+jobs = -1
+
+# =============================================================================
+# Network Settings
+# =============================================================================
+
+[net]
+# Retry downloads
+retry = 3
+
+# =============================================================================
+# Registries
+# =============================================================================
+
+[registries.crates-io]
+protocol = "sparse"

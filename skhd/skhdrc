@@ -1,0 +1,4 @@
+cmd + shift - h : yabai -m window --swap west
+cmd + shift - l : yabai -m window --swap east
+cmd + shift - k : yabai -m window --swap north
+cmd + shift - j : yabai -m window --swap south

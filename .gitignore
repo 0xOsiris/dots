@@ -1,0 +1,22 @@
+# Secrets
+*.local
+.secrets
+.env
+.env.*
+
+# macOS
+.DS_Store
+
+# Claude ephemeral data
+claude/resources/
+claude/bin/chad-mcp
+claude/plugins/marketplaces/
+claude/plugins/cache/
+
+# Editor
+*.swp
+*.swo
+*~
+
+# Compiled
+*.zwc

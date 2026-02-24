@@ -1,0 +1,424 @@
+# Claude Expert Agents - Resource Manifest
+# Resources are fetched on-demand when agents are used
+
+agents:
+  solidity-chad:
+    category: solidity
+    resources:
+      - name: solady
+        repo: vectorized/solady
+        sparse: [src/]
+      - name: solmate
+        repo: transmissions11/solmate
+        sparse: [src/]
+      - name: openzeppelin
+        repo: OpenZeppelin/openzeppelin-contracts
+        sparse: [contracts/]
+      - name: foundry-book
+        repo: foundry-rs/book
+        sparse: [src/]
+      - name: solidity-docs
+        repo: ethereum/solidity
+        sparse: [docs/]
+      - name: solcurity
+        repo: transmissions11/solcurity
+      - name: smart-contract-vulnerabilities
+        repo: kadenzipfel/smart-contract-vulnerabilities
+      - name: v3-core
+        repo: Uniswap/v3-core
+        sparse: [contracts/]
+      - name: v4-core
+        repo: Uniswap/v4-core
+        sparse: [src/]
+      - name: uniswapv3-book
+        repo: Jeiwan/uniswapv3-book
+        sparse: [content/]
+
+  rust-chad:
+    category: rust
+    resources:
+      - name: rust-book
+        repo: rust-lang/book
+        sparse: [src/]
+      - name: rust-by-example
+        repo: rust-lang/rust-by-example
+        sparse: [src/]
+      - name: rustonomicon
+        repo: rust-lang/nomicon
+        sparse: [src/]
+      - name: async-book
+        repo: rust-lang/async-book
+        sparse: [src/]
+      - name: tokio
+        repo: tokio-rs/tokio
+        sparse: [tokio/src/, examples/]
+      - name: patterns
+        repo: rust-unofficial/patterns
+        sparse: [src/]
+      - name: axum
+        repo: tokio-rs/axum
+        sparse: [axum/src/, examples/]
+      - name: serde
+        repo: serde-rs/serde
+        sparse: [serde/src/, serde_json/src/]
+      - name: anyhow
+        repo: dtolnay/anyhow
+        sparse: [src/]
+      - name: thiserror
+        repo: dtolnay/thiserror
+        sparse: [src/, impl/src/]
+      - name: rayon
+        repo: rayon-rs/rayon
+        sparse: [src/, rayon-core/src/]
+      - name: tracing-opentelemetry
+        repo: tokio-rs/tracing-opentelemetry
+        sparse: [src/]
+      - name: rust-clippy
+        repo: rust-lang/rust-clippy
+        sparse: [clippy_lints/src/]
+      - name: rustfmt
+        repo: rust-lang/rustfmt
+        sparse: [src/]
+      - name: tlborm
+        repo: veykril/tlborm
+        sparse: [src/]
+
+  infrastructure-chad:
+    category: infrastructure
+    resources:
+      - name: terraform
+        repo: hashicorp/terraform
+        sparse: [website/docs/]
+      - name: terraform-provider-aws
+        repo: hashicorp/terraform-provider-aws
+        sparse: [website/docs/r/, website/docs/d/]
+      - name: helm-docs
+        repo: helm/helm
+        sparse: [docs/]
+      - name: kubernetes-docs
+        repo: kubernetes/website
+        sparse: [content/en/docs/concepts/, content/en/docs/tasks/]
+      - name: terraform-aws-modules
+        repo: terraform-aws-modules/terraform-aws-eks
+      - name: terraform-aws-eks
+        repo: terraform-aws-modules/terraform-aws-vpc
+
+  ethereum-chad:
+    category: ethereum
+    resources:
+      - name: execution-specs
+        repo: ethereum/execution-specs
+        sparse: [src/]
+      - name: consensus-specs
+        repo: ethereum/consensus-specs
+        sparse: [specs/]
+      - name: EIPs
+        repo: ethereum/EIPs
+        sparse: [EIPS/]
+      - name: go-ethereum
+        repo: ethereum/go-ethereum
+        sparse: [core/, eth/, consensus/]
+      - name: py-evm
+        repo: ethereum/py-evm
+        sparse: [eth/]
+      - name: devp2p
+        repo: ethereum/devp2p
+      - name: annotated-spec
+        repo: ethereum/annotated-spec
+      - name: alloy
+        repo: alloy-rs/alloy
+        sparse: [crates/]
+      - name: alloy-core
+        repo: alloy-rs/core
+        sparse: [crates/]
+      - name: revm
+        repo: bluealloy/revm
+        sparse: [crates/]
+      - name: reth
+        repo: paradigmxyz/reth
+        sparse: [crates/]
+      - name: foundry
+        repo: foundry-rs/foundry
+        sparse: [crates/]
+      - name: solidity
+        repo: ethereum/solidity
+        sparse: [docs/, libsolidity/]
+
+  cryptography-chad:
+    category: zk
+    resources:
+      # ZK Proof Systems
+      - name: circom
+        repo: iden3/circom
+        sparse: [circom/, constraint_generation/]
+      - name: snarkjs
+        repo: iden3/snarkjs
+        sparse: [src/]
+      - name: circom-compat
+        repo: arkworks-rs/circom-compat
+        sparse: [src/]
+      - name: semaphore
+        repo: semaphore-protocol/semaphore
+        sparse: [packages/]
+      - name: halo2
+        repo: zcash/halo2
+        sparse: [halo2_proofs/src/]
+      - name: algebra
+        repo: arkworks-rs/algebra
+        sparse: [ff/src/, ec/src/]
+      - name: snark
+        repo: arkworks-rs/snark
+        sparse: [groth16/src/, relations/src/]
+      - name: Nova
+        repo: microsoft/Nova
+        sparse: [src/]
+      - name: co-snarks
+        repo: TaceoLabs/co-snarks
+        sparse: [co-groth16/src/]
+      - name: moonmath-manual
+        repo: LeastAuthority/moonmath-manual
+      # RISC-V Architecture
+      - name: riscv-isa-manual
+        repo: riscv/riscv-isa-manual
+        sparse: [src/]
+      - name: risc0
+        repo: risc0/risc0
+        sparse: [risc0/]
+      - name: sp1
+        repo: succinctlabs/sp1
+        sparse: [crates/]
+      - name: jolt
+        repo: a16z/jolt
+        sparse: [jolt-core/src/]
+      # Research papers are fetched separately via hooks
+
+  optimism-chad:
+    category: optimism
+    resources:
+      - name: optimism
+        repo: ethereum-optimism/optimism
+        sparse: [op-node/, op-batcher/, op-proposer/, packages/]
+      - name: op-geth
+        repo: ethereum-optimism/op-geth
+        sparse: [core/, eth/, miner/]
+      - name: specs
+        repo: ethereum-optimism/specs
+        sparse: [specs/]
+      - name: rollup-boost
+        repo: flashbots/rollup-boost
+        sparse: [src/]
+      - name: rbuilder
+        repo: flashbots/rbuilder
+        sparse: [crates/]
+
+  reth-chad:
+    category: ethereum
+    resources:
+      - name: reth
+        repo: paradigmxyz/reth
+        sparse: [crates/]
+      - name: revm
+        repo: bluealloy/revm
+        sparse: [crates/]
+      - name: alloy
+        repo: alloy-rs/alloy
+        sparse: [crates/]
+      - name: alloy-core
+        repo: alloy-rs/core
+        sparse: [crates/]
+
+  worldcoin-chad:
+    category: worldcoin
+    resources:
+      - name: world-chain
+        repo: worldcoin/world-chain
+      - name: world-id-protocol
+        repo: worldcoin/world-id-protocol
+        sparse: [contracts/, crates/]
+      - name: semaphore-rs
+        repo: worldcoin/semaphore-rs
+        sparse: [src/]
+      - name: iris-mpc
+        repo: worldcoin/iris-mpc
+        sparse: [iris-mpc-common/src/, iris-mpc-gpu/src/]
+      - name: orb-software
+        repo: worldcoin/orb-software
+        sparse: [src/]
+      - name: telemetry-batteries
+        repo: worldcoin/telemetry-batteries
+        sparse: [src/]
+      - name: developer-docs
+        repo: worldcoin/developer-docs
+        sparse: [docs/]
+      - name: developer-portal
+        repo: worldcoin/developer-portal
+        sparse: [web/]
+
+  mev-chad:
+    category: mev
+    resources:
+      # MEV Frameworks
+      - name: mev-book
+        repo: 0xOsiris/Mev_Book
+      - name: artemis
+        repo: paradigmxyz/artemis
+        sparse: [crates/]
+      - name: amms-rs
+        repo: darkforestry/amms-rs
+        sparse: [src/]
+      - name: rusty-sando
+        repo: mouseless-eth/rusty-sando
+      - name: subway-rs
+        repo: refcell/subway-rs
+      - name: mev-boost
+        repo: flashbots/mev-boost
+      - name: rbuilder
+        repo: flashbots/rbuilder
+        sparse: [crates/]
+      - name: mev-share-rs
+        repo: flashbots/mev-share-rs
+        sparse: [src/]
+      - name: rollup-boost
+        repo: flashbots/rollup-boost
+        sparse: [crates/]
+      - name: rblib
+        repo: flashbots/rblib
+        sparse: [crates/]
+      - name: builder-playground
+        repo: flashbots/builder-playground
+      - name: mempool-dumpster
+        repo: flashbots/mempool-dumpster
+        sparse: [collector/]
+      - name: cfmm-routing-code
+        repo: angeris/cfmm-routing-code
+      # Uniswap
+      - name: uniswap-v2-core
+        repo: Uniswap/v2-core
+        sparse: [contracts/]
+      - name: uniswap-v2-periphery
+        repo: Uniswap/v2-periphery
+        sparse: [contracts/]
+      - name: uniswap-v3-core
+        repo: Uniswap/v3-core
+        sparse: [contracts/]
+      - name: uniswap-v3-periphery
+        repo: Uniswap/v3-periphery
+        sparse: [contracts/]
+      - name: uniswap-v4-core
+        repo: Uniswap/v4-core
+        sparse: [src/]
+      - name: uniswap-v4-periphery
+        repo: Uniswap/v4-periphery
+        sparse: [src/]
+      - name: universal-router
+        repo: Uniswap/universal-router
+        sparse: [contracts/]
+      - name: permit2
+        repo: Uniswap/permit2
+        sparse: [src/]
+      # Curve
+      - name: curve-contract
+        repo: curvefi/curve-contract
+        sparse: [contracts/]
+      - name: tricrypto-ng
+        repo: curvefi/tricrypto-ng
+        sparse: [contracts/]
+      - name: stableswap-ng
+        repo: curvefi/stableswap-ng
+        sparse: [contracts/]
+      - name: curve-router-ng
+        repo: curvefi/curve-router-ng
+        sparse: [contracts/]
+      # Balancer
+      - name: balancer-v2-monorepo
+        repo: balancer/balancer-v2-monorepo
+        sparse: [pkg/vault/contracts/, pkg/pool-weighted/contracts/, pkg/pool-stable/contracts/]
+      - name: balancer-v3-monorepo
+        repo: balancer/balancer-v3-monorepo
+        sparse: [pkg/vault/contracts/, pkg/pool-hooks/contracts/]
+      # Aave
+      - name: aave-v3-core
+        repo: aave/aave-v3-core
+        sparse: [contracts/]
+      - name: aave-v3-periphery
+        repo: aave/aave-v3-periphery
+        sparse: [contracts/]
+      - name: aave-v2-core
+        repo: aave/protocol-v2
+        sparse: [contracts/]
+      # Morpho
+      - name: morpho-blue
+        repo: morpho-org/morpho-blue
+        sparse: [src/]
+      - name: morpho-blue-oracles
+        repo: morpho-org/morpho-blue-oracles
+        sparse: [src/]
+      # Compound
+      - name: compound-protocol
+        repo: compound-finance/compound-protocol
+        sparse: [contracts/]
+      - name: comet
+        repo: compound-finance/comet
+        sparse: [contracts/]
+      # MakerDAO
+      - name: dss
+        repo: makerdao/dss
+        sparse: [src/]
+      - name: dss-flash
+        repo: makerdao/dss-flash
+        sparse: [src/]
+      # Lido
+      - name: lido-dao
+        repo: lidofinance/lido-dao
+        sparse: [contracts/]
+      - name: steth
+        repo: lidofinance/core
+        sparse: [contracts/]
+      # Yearn
+      - name: yearn-vaults-v3
+        repo: yearn/yearn-vaults-v3
+        sparse: [contracts/]
+      # 1inch
+      - name: 1inch-limit-order
+        repo: 1inch/limit-order-protocol
+        sparse: [contracts/]
+      - name: 1inch-aggregation-router
+        repo: 1inch/1inch-v5-contracts
+        sparse: [contracts/]
+      # 0x
+      - name: 0x-protocol
+        repo: 0xProject/protocol
+        sparse: [contracts/]
+      # Synthetix
+      - name: synthetix-v3
+        repo: Synthetixio/synthetix-v3
+        sparse: [protocol/synthetix/contracts/]
+      # GMX
+      - name: gmx-synthetics
+        repo: gmx-io/gmx-synthetics
+        sparse: [contracts/]
+      # EigenLayer
+      - name: eigenlayer-contracts
+        repo: Layr-Labs/eigenlayer-contracts
+        sparse: [src/]
+      # Chainlink
+      - name: chainlink
+        repo: smartcontractkit/chainlink
+        sparse: [contracts/src/]
+      # Pendle
+      - name: pendle-core-v2
+        repo: pendle-finance/pendle-core-v2-public
+        sparse: [contracts/]
+      # Euler
+      - name: euler-vault-kit
+        repo: euler-xyz/euler-vault-kit
+        sparse: [src/]
+      # Paraswap
+      - name: paraswap-dex-lib
+        repo: paraswap/paraswap-dex-lib
+        sparse: [src/]
+
+# Settings
+settings:
+  shallow_clone: true
+  auto_update: false

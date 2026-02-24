@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "chad-orchestrator": {
+      "command": "$HOME/.claude/bin/chad-mcp",
+      "args": [],
+      "env": {
+        "RUST_LOG": "info"
+      }
+    }
+  }
+}

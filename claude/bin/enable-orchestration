@@ -1,0 +1,64 @@
+#!/bin/bash
+# Enable Chad orchestration in the current project
+#
+# Usage: enable-orchestration [--global]
+#
+# Options:
+#   --global    Add to user config instead of project .mcp.json
+
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CLAUDE_DIR="$(dirname "$SCRIPT_DIR")"
+MCP_CONFIG="$CLAUDE_DIR/mcp-servers.json"
+
+if [ "$1" == "--global" ]; then
+    echo "Orchestration is already configured globally at:"
+    echo "  $MCP_CONFIG"
+    echo ""
+    echo "To use, start Claude with:"
+    echo "  claude --mcp-config $MCP_CONFIG"
+    exit 0
+fi
+
+# Create .mcp.json in current directory
+if [ -f ".mcp.json" ]; then
+    echo "Warning: .mcp.json already exists in this directory."
+    echo "Do you want to merge chad-orchestrator into it? [y/N]"
+    read -r response
+    if [ "$response" != "y" ] && [ "$response" != "Y" ]; then
+        echo "Aborted."
+        exit 1
+    fi
+
+    # Use jq to merge if available, otherwise show manual instructions
+    if command -v jq &> /dev/null; then
+        jq -s '.[0] * .[1]' .mcp.json "$CLAUDE_DIR/templates/mcp.json" > .mcp.json.tmp
+        mv .mcp.json.tmp .mcp.json
+        echo "Merged chad-orchestrator into .mcp.json"
+    else
+        echo "Please manually add to your .mcp.json:"
+        cat "$CLAUDE_DIR/templates/mcp.json"
+    fi
+else
+    cp "$CLAUDE_DIR/templates/mcp.json" .mcp.json
+    echo "Created .mcp.json with chad-orchestrator"
+fi
+
+echo ""
+echo "Orchestration enabled for this project!"
+echo ""
+echo "Available tools:"
+echo "  - delegate_task: Delegate work to expert agents"
+echo "  - check_agent: Check agent status"
+echo "  - bus_publish: Send messages to agents"
+echo "  - bus_poll_responses: Receive messages from agents"
+echo ""
+echo "Available agents:"
+echo "  rust-expert, solidity-expert, ethereum-expert, zk-expert,"
+echo "  infra-expert, optimism-expert, worldcoin-expert, go-expert,"
+echo "  typescript-expert, reth-expert"
+echo ""
+echo "Documentation:"
+echo "  $CLAUDE_DIR/docs/ORCHESTRATION.md"
+echo "  $CLAUDE_DIR/docs/AGENTS.md"
